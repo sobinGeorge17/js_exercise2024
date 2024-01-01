@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label>Enter the text</label>
+    <textarea id="textdata" rows="6" cols="40" placeholder="enter the text"></textarea>
+    <button  onclick="capitailze()">Get the output</button>
+    <p id="output"></p>
+
+
+    <script>
+        function capitailze(){
+            const data = document.getElementById('textdata').value
+            
+
+            const value = data.split('. ')
+            for(let words in value){
+              value[words] = value[words].charAt(0).toUpperCase() + value[words].slice(1)
+            }
+            const capitailzed = value.join('. ')
+            document.getElementById('output').innerHTML = capitailzed
+        }
+    </script>
+</body>
+</html>

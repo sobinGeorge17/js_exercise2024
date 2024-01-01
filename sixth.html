@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <h1>Date </h1>
+    <input type="text" id="date" placeholder="DD/MM/YYYY">
+    <button onclick="alertMessage()">click here</button>
+
+
+
+    <script>
+
+        function alertMessage(){
+
+            const userInput = document.getElementById("date").value 
+            const today = new Date()
+            const day = today.getDate()
+            console.log(day);
+            const month = today.getMonth() + 1
+            console.log(month);
+            const year = today.getFullYear()
+            console.log(year);
+
+            const userDate = userInput.split('/')
+            console.log(userDate);
+            const userDay = parseInt(userDate[0],10)
+            console.log(userDay,"hh");
+            const userMonth = Number(userDate[1])
+            console.log(userMonth);
+            const userYear = Number(userDate[2])
+
+
+            if(year === userYear && month === userMonth && day === userDay){
+                alert("Today")
+            }else if( (year<userYear) || 
+            (year===userYear && month <userMonth  ) ||
+             ( year===userYear && month ===userMonth && day<userDay)  )
+            {
+                alert("after today")
+              
+            }else{
+                alert("Before Today")
+            }
+
+
+            
+        }
+
+    </script>
+</body>
+</html>
